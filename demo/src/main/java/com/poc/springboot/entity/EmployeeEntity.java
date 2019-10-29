@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "TBL_EMPLOYEES")
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class EmployeeEntity {
 
 	public EmployeeEntity() {
@@ -42,9 +42,9 @@ public class EmployeeEntity {
 	@Column
 	private String role;
 
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "employeeEntity")
+	@OneToMany(cascade = CascadeType.REMOVE, mappedBy = "employeeEntity")
 	@JsonIgnore
-		private List<SalaryEmployeeEntity> salaryEmployeeEntity;
+	private List<SalaryEmployeeEntity> salaryEmployeeEntity;
 
 	public Long getEmpId() {
 		return empId;

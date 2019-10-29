@@ -35,7 +35,8 @@ public class SalaryEmployeeEntity {
 	private long conveyance;
 
 	 @ManyToOne(fetch = FetchType.LAZY)
-	 @JoinColumn(name = "employeeEntity_empId")
+	@JoinColumn(name = "employeeEntity_empId")
+	// @JoinColumn(name = "emp_empid", nullable = false)
 	 @JsonIgnore
 	private EmployeeEntity employeeEntity;
 
