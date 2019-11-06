@@ -50,7 +50,9 @@ public class SalaryEmployeeController {
 
 		return salaryEmprepo.findById(salId).map(sal -> {
 			sal.setBasic(salPay.getBasic());
-			return salaryEmprepo.save(sal);
+			sal.setCityCompAllow(salPay.getCityCompAllow());
+			sal.setHra(salPay.getHra());
+						return salaryEmprepo.save(sal);
 		}).orElseThrow(() -> new ResourceNotFoundException("salId " + salId + "not found"));
 	}
    

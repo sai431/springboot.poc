@@ -42,7 +42,7 @@ public class EmployeeEntity {
 	@Column
 	private String role;
 
-	@OneToMany(cascade = CascadeType.REMOVE, mappedBy = "employeeEntity")
+	@OneToMany( mappedBy = "employeeEntity")
 	@JsonIgnore
 	private List<SalaryEmployeeEntity> salaryEmployeeEntity;
 
